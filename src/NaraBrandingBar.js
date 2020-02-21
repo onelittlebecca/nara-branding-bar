@@ -65,6 +65,7 @@ export class NaraBrandingBar extends LitElement {
     return {
       title: { type: String },
       exploreText: { type: String, attribute: 'explore-text' },
+      basePath: { type: String, attribute: "base-path" },
     };
   }
 
@@ -95,7 +96,7 @@ export class NaraBrandingBar extends LitElement {
    */
   render() {
     return html`
-      <nara-logo format="horizontal"></nara-logo>
+      <nara-logo format="horizontal" base-path="${this.basePath}"></nara-logo>
       <button @click="${this.clickEvent}" class="collapsible-mxg" controls="smt1">${this.exploreText}</button>
       <simple-modal-template id="smt1">
         <slot slot="content"></slot>
