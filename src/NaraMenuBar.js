@@ -15,6 +15,12 @@ export class NaraMenuBar extends LitElement {
     }
     `;
   }
+  
+  static get properties() {
+    return {
+      basePath: { type: String, attribute: "base-path" },
+    };
+  }
 
   /**
    * HTMLElement
@@ -35,7 +41,7 @@ export class NaraMenuBar extends LitElement {
    */
   render() {
     return html`
-    <nara-branding-bar @nara-branding-modal-open="${this.modalOpening}">
+    <nara-branding-bar @nara-branding-modal-open="${this.modalOpening}" base-path="${this.basePath}">
       <nara-menu-bar-links></nara-menu-bar-links>
     </nara-branding-bar>
     `;
